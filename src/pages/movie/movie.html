@@ -1,0 +1,31 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Movies</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card *ngFor="let movie of lista_movies">
+
+          <ion-item>
+            <ion-avatar item-start>
+              <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
+            </ion-avatar>
+            <h2>{{ movie?.original_title }}</h2>
+            <p>{{ movie?.release_date | date: "dd, MMM yyyy" }}</p>
+          </ion-item>
+
+          <img [src]="'https://image.tmdb.org/t/p/w300/' + movie.backdrop_path">
+
+          <ion-card-content>
+            <p>{{ movie.overview }}</p>
+          </ion-card-content>
+
+        </ion-card>
+
+</ion-content>
